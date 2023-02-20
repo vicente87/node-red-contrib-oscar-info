@@ -3,7 +3,7 @@
         "id": "18c5680886df4529",
         "type": "subflow",
         "name": "OSCAR Info",
-        "info": "\n    \n<main>\n        <!--Contenido fundamental de la pagina-->\n        <section>\n            <h2>Description</h2>\n            <article>\n                <h3>General</h3> \n                <p> OSCAR is a framework to efficiently support on-premises FaaS (Functions as a Service)for general-purpose file-processing computing applications. It represents the porting to an on-premises scenario of the SCAR framework, which supports a High Throughput Computing Programming Model to create highly-parallel event-driven file-processing serverless applications that execute on customized runtime environments provided by Docker containers run on AWS Lambda.</p>\n                <p>For more information about this platform: </p>\n                <ul>\n                    <li>\n                        <a rel=\"stylesheet\" href=\"https://docs.oscar.grycap.net/\">OSCAR </a>\n                    </li>\n                </ul>\n            </article>\n            <article>\n                <h3>Inputs</h3> \n                <p>The input variables will be the url of the OSCAR server and the authentication credentials. With these variables a get request is made to the server (GET /system/services)</p>\n                <ul>\n                    <li>\n                        <a rel=\"stylesheet\" href=\"https://docs.oscar.grycap.net/api/\">Services </a>\n                    </li>\n                </ul>\n            </article>\n            <article>\n                <h3>Outputs</h3>\n                <p>The OSCAR info node returns the information of the OSCAR platform on which it is working.The server returns in <code> msg.payload </code>  a list of the services that are implemented.</p>\n            </article>\n        </section>\n        \n</main>\n<footer>\n        GryCAP\n</footer>",
+        "info": "\n    \n<main>\n        <!--Contenido fundamental de la pagina-->\n        <section>\n            <h2>Description</h2>\n            <article>\n                <h3>General</h3> \n                <p> OSCAR is a framework to efficiently support on-premises FaaS (Functions as a Service)for general-purpose file-processing computing applications. It represents the porting to an on-premises scenario of the SCAR framework, which supports a High Throughput Computing Programming Model to create highly-parallel event-driven file-processing serverless applications that execute on customized runtime environments provided by Docker containers run on AWS Lambda.</p>\n                <p>For more information about this platform: </p>\n                <ul>\n                    <li>\n                        <a rel=\"stylesheet\" href=\"https://docs.oscar.grycap.net/\">OSCAR </a>\n                    </li>\n                </ul>\n            </article>\n            <article>\n                <h3>Inputs</h3> \n                <p>The input variables will be the url of the OSCAR server and the authentication credentials. With these variables a get request is made to the server (GET /system/services)</p>\n                <ul>\n                    <li>\n                        <a rel=\"stylesheet\" href=\"https://docs.oscar.grycap.net/api/\">Services </a>\n                    </li>\n                </ul>\n            </article>\n            <article>\n                <h3>Outputs</h3>\n                <p>The OSCAR info node returns the information of the OSCAR platform on which it is working.The server returns in <code> msg.payload </code>  a list of the services that are implemented.</p>\n            </article>\n        </section>\n        \n</main>\n<footer>\n        GRyCAP (Grupo de Grid y Computación de Altas Prestaciones) - UPV\n</footer>",
         "category": "",
         "in": [
             {
@@ -18,7 +18,7 @@
         ],
         "out": [
             {
-                "x": 1100,
+                "x": 1280,
                 "y": 260,
                 "wires": [
                     {
@@ -66,16 +66,19 @@
         "meta": {
             "module": "node-red-contrib-oscar-info",
             "type": "oscar",
-            "version": "1.0.1",
+            "version": "1.0.0",
             "author": "Vicente Rodriguez Benitez <vicente.rdguezb@gmail.com, vrodben1@i3m.upv.es>",
             "desc": "OSCAR  information",
             "keywords": "node-red,oscar, information",
             "license": "GPL-3.0"
         },
+        "credentials": {
+            "Password": ""
+        },
         "color": "#3FADB5",
         "icon": "font-awesome/fa-info-circle",
         "status": {
-            "x": 1080,
+            "x": 1280,
             "y": 120,
             "wires": [
                 {
@@ -109,7 +112,6 @@
         "y": 260,
         "wires": [
             [
-                "aa2b0745049a4949",
                 "66dd8260482588b0"
             ]
         ]
@@ -187,7 +189,7 @@
         "id": "faf4af791add3bb1",
         "type": "function",
         "z": "18c5680886df4529",
-        "name": "function 3",
+        "name": "Load Log",
         "func": "var server=msg.oscar_server;\nmsg.payload={\n\"username\":msg.username,\n\"password\":msg.pass\n\n}\nmsg.url = server +\"/system/services\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
@@ -221,8 +223,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 730,
-        "y": 100,
+        "x": 490,
+        "y": 120,
         "wires": [
             []
         ]
@@ -260,8 +262,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 910,
-        "y": 180,
+        "x": 1130,
+        "y": 200,
         "wires": [
             []
         ]
@@ -302,7 +304,9 @@
         "x": 950,
         "y": 260,
         "wires": [
-            []
+            [
+                "aa2b0745049a4949"
+            ]
         ]
     }
 ]
